@@ -1,0 +1,18 @@
+
+.social {
+    margin: 6px;
+    height: 25px;
+    width: 25px;
+    float: right;
+    margin-top: 10px;
+}
+
+.upperheader{
+    height: 41px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.nav-link.nav-item:hover:not(.active){
+    color:white;
+}
