@@ -63,7 +63,7 @@ function activeNavItem() {
     if (document.URL.includes("index")) {
         document.getElementById("forside").className += " active";
     }
-    else if (document.URL.includes("opgaver")) {
+    else if (document.URL.includes("opgaver")||document.URL.includes("fuldbeskrivelse")) {
         document.getElementById("opgaver").className += " active";
     }
     else if (document.URL.includes("kontakt")) {
@@ -71,5 +71,5 @@ function activeNavItem() {
     }
 }
 
-    }, 75);
+    }, 100);
 }
