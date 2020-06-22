@@ -13,6 +13,22 @@
     margin-right: 16px;
 }
 
-.nav-link.nav-item:hover:not(.active){
-    color:white;
+.bg-darkgray{
+    background-color: rgb(20,20,20);
 }
+
+.bg-lightblack{
+    background-color: rgb(25,25,25);
+}
+
+.card-margin{
+    margin:5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    width: 23%;
+    height: auto;   
+}
+#front.row{
+    margin:0;
+}
+
