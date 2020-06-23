@@ -9,7 +9,7 @@ function getheader() {
         if (this.readyState === 4 && this.status === 200)
             document.getElementById("header").innerHTML = this.responseText;
     }
-    xmlhttp.open("GET", "../php/header.php", true);
+    xmlhttp.open("GET", "../php/bin/header.php", true);
     xmlhttp.send();
     CreateSocial();
     getfooter();
@@ -73,5 +73,5 @@ function activeNavItem() {
     else if (document.URL.includes("kontakt")) {
         document.getElementById("kontakt").className += " active";
     }
-    }, 50);
+    }, 100);
 }

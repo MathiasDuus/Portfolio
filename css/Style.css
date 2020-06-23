@@ -4,6 +4,7 @@ body {
    margin:0;
    padding:0;
    height:100%;
+   background-color: whitesmoke !important;
 }
 
 .social {
@@ -64,5 +65,9 @@ body {
     height: 400px;
 }
 
+.row.row-margin{
+    margin:5%;
+    margin-left: 12.5%;
+}
 
 

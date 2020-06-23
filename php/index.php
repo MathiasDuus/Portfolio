@@ -8,11 +8,6 @@
         <link href="../css/Style.css" rel="stylesheet" type="text/css"/>
         <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         
-        <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/getheader().js" type="text/javascript"></script>
-        <script src="../js/imgerror.js" type="text/javascript"></script>
-        <script src="../js/getfooter.js" type="text/javascript"></script>
-        
     </head>
     <body onload="getheader();">
         <div id="target" class="navbar-dark upperheader bg-darkgray">
@@ -24,7 +19,7 @@
         <div id="front" class="row">
     <?php    
     
-    include 'checkProject.php';
+    include 'bin/checkProject.php';
     $ID = 1;    
     
     for($ID;$ID<4;$ID++){
@@ -32,7 +27,7 @@
         
          ?>
         
-  <div class="col-sm card-margin">
+  <div class="col-lg card-margin">
     <div class="card">
         <img class="card-img-top card-imgage" src="<?php echo $imgsrc; ?>" onerror="<?php echo $imgsrc; ?>">
       <div class="card-body">
@@ -51,5 +46,12 @@
             </div>
             <div id="footer" class="footer bg-dark">
             </div>
+        
+<!--        All Java Script files  -->
+        <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/getheader().js" type="text/javascript"></script>
+        <script src="../js/imgerror.js" type="text/javascript"></script>
+        <script src="../js/getfooter.js" type="text/javascript"></script>
+        <script src="../js/activeNav.js" type="text/javascript"></script>
   </body>
 </html>

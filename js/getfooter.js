@@ -8,6 +8,6 @@ function getfooter() {
         if (this.readyState === 4 && this.status === 200)
             document.getElementById("footer").innerHTML = this.responseText;
     }
-    xmlhttp.open("GET", "../php/footer.php", true);
+    xmlhttp.open("GET", "../php/bin/footer.php", true);
     xmlhttp.send();
 }
