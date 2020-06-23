@@ -1,8 +1,3 @@
-<div class="bg-darkgray">
-        <div id="target" class="navbar-dark upperheader">
-            <a class="navbar-brand" href="index.php">  Mit portfolio  </a>
-        </div>
-
 
 <nav class="navbar navbar-expand navbar-dark bg-lightblack">
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -13,7 +8,6 @@
     </div>
   </div>
 </nav>
-</div>
 
     
     

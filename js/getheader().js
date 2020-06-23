@@ -1,3 +1,4 @@
+
 function getheader() {
     if (window.XMLHttpRequest)
         xmlhttp = new XMLHttpRequest();
@@ -11,12 +12,12 @@ function getheader() {
     xmlhttp.open("GET", "../php/header.php", true);
     xmlhttp.send();
     CreateSocial();
+    getfooter();
 }
 
 
 
 function CreateSocial() {
-    setTimeout(function () {
         var imgSrc = ["../images/social/linkedin.png", "../images/social/github.png", "../images/social/twitter.png", "../images/social/facebook.png"];
 
         for (i = 0; i < imgSrc.length; i++) {
@@ -59,7 +60,10 @@ function CreateSocial() {
             document.getElementById("social" + i).className = "social";
         }
 activeNavItem();
+}
+
 function activeNavItem() {
+     setTimeout(function () {
     if (document.URL.includes("index")) {
         document.getElementById("forside").className += " active";
     }
@@ -69,7 +73,5 @@ function activeNavItem() {
     else if (document.URL.includes("kontakt")) {
         document.getElementById("kontakt").className += " active";
     }
-}
-
-    }, 100);
+    }, 50);
 }

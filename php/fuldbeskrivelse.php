@@ -1,46 +1,55 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
-        
-         <link href="../css/Style.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/Style.css" rel="stylesheet" type="text/css"/>
         <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         
         <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="../js/getheader().js" type="text/javascript"></script>
+        <script src="../js/imgerror.js" type="text/javascript"></script>
+        <script src="../js/getfooter.js" type="text/javascript"></script>
         
-        <title>Fuld beskrivelse</title>
+        <title>Opgaver </title>
     </head>
-    <body>
-        <?php
-        $servername = "localhost";
-        $username = "Mathias";
-        $password = "HQG63cth!";
-        $dbname = "projectdb";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        }
-        $value = $_POST['first'];
-        $sql = 'SELECT * FROM Project WHERE ProjectID ="'.$value.'"';
-        $result = $conn->query($sql);
-
-        if ($result) {
-            $row = $result->fetch_assoc();
-            $titel = $row["Navn"];
-            $kortbeskrivelse = $row["Beskrivelse"];
-        }
-        echo $titel;
-        echo nl2br($kortbeskrivelse);
+    <body onload="getheader();">
+        <div id="target" class="navbar-dark upperheader bg-darkgray">
+            <a class="navbar-brand" href="index.php">  Mit portfolio  </a>
+        </div>
         
-        ?>
+        <header id="header">
+        </header>
+         
+          <?php  
+    
+    include 'checkProjectExtend.php';
+    
+
+    $ID =$_GET['value'];    
+    
+   
+         list($titel, $beskrivelse, $imgsrc, $dato, $github) = checkProjectExtend($ID);
+        
+         ?>
+        
+<div class="col-sm-6 card-margin-big">
+    <div class="card">
+        <img class="card-img-top card-img-big" src="<?php echo $imgsrc; ?>" alt="<?php echo $imgsrc; ?>">
+        
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $titel; ?></h5>
+            <p class="card-text"><?php echo $beskrivelse; ?></p>
+            <p class="card-text">
+                <small class="text-muted">
+                    <a target="_blank" href="<?php echo $github; ?>">GitHub</a>
+                    Last updated <?php echo $dato; ?></small></p>
+        </div>
+    </div>
+</div>
+             
+
+            <div id="footer" class="footer bg-dark">
+            </div>
     </body>
 </html>

@@ -1,6 +1,7 @@
-
 <?php
-function checkProject($ID){
+
+function checkProjectExtend($ID){
+    
     $servername = "localhost"; 
     $username = "Mathias"; 
     $password = "HQG63cth!"; 
@@ -28,8 +29,10 @@ function checkProject($ID){
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $titel = $row["Navn"];
-        $kortbeskrivelse = $row["Beskrivelsekort"];
+        $beskrivelse = $row["Beskrivelse"];
         $imgsrc = $row["ProjectImg"];
+        $dato = date("d-m-Y", strtotime($row["Dato"]));
+        $github = $row["Gitlink"];
         }
     else {
         $sql = 'SELECT * FROM lorem'; 
@@ -37,10 +40,16 @@ function checkProject($ID){
 
         $row = $result->fetch_assoc();
         $titel = $row["loremtitel"];
-        $kortbeskrivelse = $row["lorembeskrivkort"];
+        $beskrivelse = $row["lorembeskriv"];
         $imgsrc = "../images/thumb/lorem_thumb.png";
+        $dato = "DD-MM-YYYY";
+        $github = $row["loremgitlink"];
     } 
+    
+       
+        
         $conn->close(); $loremconn->close();
 
-        return array($titel, $kortbeskrivelse, $imgsrc);
-    }
+        return array($titel, $beskrivelse, $imgsrc, $dato, $github);
+}
+    
