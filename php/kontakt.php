@@ -22,23 +22,29 @@
 <div class="container">
     <div class="row row-margin">
         <div class="col-sm-6">
-            One of three columns
+            
+            <form method="post" action="bin/sendmail.php">
+                <div class="form-group">
+                  <label for="email">Email address </label>
+                  <input type="email" class="form-control" name="email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="emne">Emne </label>
+                  <input type="text" class="form-control" name="emne" placeholder="Emne">
+                </div>
+                <div class="form-group">
+                  <label for="besked">Besked </label>
+                  <textarea class="form-control" name="besked"  placeholder="Skriv din besked her..." rows="4"></textarea>
+                </div>
+                  <button type="submit" class="btn btn-primary mb-2">Send </button>
+            </form>
         </div>
         <div class="col-sm-6">
-            <img src="https://bit.ly/2NzOo6h" onerror="../images/thumb/pandamail_thumb.png">
+            <img src="../images/thumb/pandamail_thumb.png" onerror="https://lh3.googleusercontent.com/proxy/f6Kb92i_cZk3jFasbrGXjL9xkQYb0VdhSF-pisk4epLpS9-LkmAo1PM9tdpvda2a7JUYFudsmiep7pdLfNBLoJON9fuj4xc">
         </div>
     </div>
 </div>     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+
      
      
     <div id="footer" class="footer bg-dark">

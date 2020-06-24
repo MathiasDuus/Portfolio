@@ -15,7 +15,7 @@ function checkProjectExtend($ID){
     $loremservername = "localhost"; 
     $loremusername = "Mathias"; 
     $lorempassword = "HQG63cth!"; 
-    $loremdbname = "loremdb";
+    $loremdbname = "projectdb";
 
     // Create connection
     $loremconn = new mysqli($loremservername, $loremusername, $lorempassword, $loremdbname);
