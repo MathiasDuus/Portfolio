@@ -17,7 +17,9 @@ if (isset($_POST['email'])&&isset($_POST['besked'])&&isset($_POST['emne']))
 
     $from = "$email";
     
-    $msg = "$besked". "\n Fra ". "$from";
+    $inputText = "$besked"."\n Fra: "."$from";
+    
+    $msg = nl2br(htmlentities($inputText, ENT_QUOTES, 'UTF-8'));
 
     include("phpmailer/class.phpmailer.php");
 
@@ -39,25 +41,8 @@ if (isset($_POST['email'])&&isset($_POST['besked'])&&isset($_POST['emne']))
 if(!$mail->send()){
  echo "Mailer Error: " . $mail->ErrorInfo;
 }else{
- echo "E-Mail has been sent";
+    header("Location: ../kontakt.php");
+    exit();
 }
 
 }
-
-//
-//
-//  $to = "mathiass031001@gmail.com";
-//         $subject = "$emne";
-//         
-//         $message = "nl2br$besked";
-//         
-//         $header = "From:$email";
-//         
-//         $retval = mail ($to,$subject,$message,$header);
-//         
-//         if( $retval == true ) {
-//            echo "Message sent successfully...";
-//         }else {
-//            echo "Message could not be sent...";
-//         }
-//

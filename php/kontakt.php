@@ -26,15 +26,15 @@
             <form method="post" action="bin/sendmail.php">
                 <div class="form-group">
                   <label for="email">Email address </label>
-                  <input type="email" class="form-control" name="email" placeholder="name@example.com">
+                  <input required type="email" class="form-control" name="email" placeholder="name@example.com">
                 </div>
                 <div class="form-group">
                   <label for="emne">Emne </label>
-                  <input type="text" class="form-control" name="emne" placeholder="Emne">
+                  <input required type="text" class="form-control" name="emne" placeholder="Emne">
                 </div>
                 <div class="form-group">
                   <label for="besked">Besked </label>
-                  <textarea class="form-control" name="besked"  placeholder="Skriv din besked her..." rows="4"></textarea>
+                  <textarea required class="form-control" name="besked"  placeholder="Brug Enter til at lave et linje skift i E-mailen.&#13;&#10;Skriv din besked her..." rows="4"></textarea>
                 </div>
                   <button type="submit" class="btn btn-primary mb-2">Send </button>
             </form>
