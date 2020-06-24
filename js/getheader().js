@@ -52,7 +52,7 @@ function CreateSocial() {
                 //Facebook
                 case 3:
                     img.onclick = function () {
-                        window.location.href = '';
+                        window.location.href = 'https://da-dk.facebook.com/MathiasDuusNielsen';
                     };
                     break;
             }
@@ -72,6 +72,9 @@ function activeNavItem() {
     }
     else if (document.URL.includes("kontakt")) {
         document.getElementById("kontakt").className += " active";
+    }
+        if (document.URL.includes("send=true")) {
+        alert("Tak for din mail :)");
     }
     }, 100);
 }

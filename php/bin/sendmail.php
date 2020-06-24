@@ -41,7 +41,7 @@ if (isset($_POST['email'])&&isset($_POST['besked'])&&isset($_POST['emne']))
 if(!$mail->send()){
  echo "Mailer Error: " . $mail->ErrorInfo;
 }else{
-    header("Location: ../kontakt.php");
+    header("Location: ../kontakt.php?send=true");
     exit();
 }
 
