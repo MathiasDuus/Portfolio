@@ -21,8 +21,8 @@
     
 <div class="container">
     <div class="row row-margin">
-        <div class="col-sm-6">
-            
+        <div class="col-md-6">
+            <h3>Hej, hvad kan jeg hjælpe med?</h3>
             <form method="post" action="bin/sendmail.php">
                 <div class="form-group">
                   <label for="email">Email address </label>

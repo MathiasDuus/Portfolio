@@ -1,4 +1,3 @@
-
 function getheader() {
     if (window.XMLHttpRequest)
         xmlhttp = new XMLHttpRequest();
@@ -7,16 +6,14 @@ function getheader() {
 
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200)
-            document.getElementById("header").innerHTML = this.responseText;
-    }
+            document.getElementById("header").innerHTML = this.responseText;}
+        
     xmlhttp.open("GET", "../php/bin/header.php", true);
     xmlhttp.send();
     CreateSocial();
     getfooter();
     urlCheck()
 }
-
-
 
 function CreateSocial() {
         var imgSrc = ["../images/social/linkedin.png", "../images/social/github.png", "../images/social/twitter.png", "../images/social/facebook.png"];
@@ -58,32 +55,29 @@ function CreateSocial() {
                     break;
             }
             document.getElementById("target").appendChild(img);
-            document.getElementById("social" + i).className = "social";
-        }
+            document.getElementById("social" + i).className = "social";}
+        
 activeNavItem();
 }
 
 function activeNavItem() {
      setTimeout(function () {
     if (document.URL.includes("index")) {
-        document.getElementById("forside").className += " active";
-    }
+        document.getElementById("forside").className += " active";}
+    
     else if (document.URL.includes("opgaver")||document.URL.includes("fuldbeskrivelse")) {
-        document.getElementById("opgaver").className += " active";
-    }
+        document.getElementById("opgaver").className += " active";}
+    
     else if (document.URL.includes("kontakt")) {
-        document.getElementById("kontakt").className += " active";
-    }   
+        document.getElementById("kontakt").className += " active";}   
     }, 100);
 }
 
 function urlCheck(){
     if (document.URL.includes("send=true")) {
-        alert("Tak for din mail :)");
-    }
+        alert("Tak for din mail :)");}
     else if (document.URL.includes("send=false")) {
-        alert("Hov der gik noget galt");
-    }
+        alert("Hov der gik noget galt");}
 }
 
 function logincheck(){
@@ -92,5 +86,4 @@ var r=confirm("Husk att logge ind!");
       if (r==true)
         {
         window.location="login.php";}
-    
 }
