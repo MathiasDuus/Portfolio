@@ -4,9 +4,9 @@
 
 if (isset($_POST['email'])&&isset($_POST['besked'])&&isset($_POST['emne']))
 {
-    $email = $_POST['email'];
-    $besked = $_POST['besked'];
-    $emne = $_POST['emne'];
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $besked = filter_var($_POST['besked'], FILTER_SANITIZE_STRING);
+    $emne = filter_var($_POST['emne'], FILTER_SANITIZE_STRING);
     
     $account = "spammenow69420@gmail.com";//the account to "login" to google with
     $password="HQG63cth";
@@ -44,5 +44,10 @@ if(!$mail->send()){
     header("Location: ../kontakt.php?send=true");
     exit();
 }
+
+}
+else{
+    header("Location: ../kontakt.php?send=false");
+exit();
 
 }

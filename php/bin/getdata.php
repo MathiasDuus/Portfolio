@@ -2,8 +2,8 @@
 
 function conn(){
  $servername = "localhost"; 
-    $username = "Mathias"; 
-    $password = "HQG63cth!"; 
+    $username = "hentdata"; 
+    $password = "123QWEasdZXC&_%"; 
     $dbname = "projectdb";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,24 +11,13 @@ function conn(){
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
     }
-    $loremservername = "localhost"; 
-    $loremusername = "Mathias"; 
-    $lorempassword = "HQG63cth!"; 
-    $loremdbname = "projectdb";
-
-    // Create connection
-    $loremconn = new mysqli($loremservername, $loremusername, $lorempassword, $loremdbname);
-    // Check connection
-    if ($loremconn->connect_error) {
-       die("Connection failed: " . $loremconn->connect_error);
-    }
     return $conn;
 }
 
 function loremconn(){
     $loremservername = "localhost"; 
-    $loremusername = "Mathias"; 
-    $lorempassword = "HQG63cth!"; 
+    $loremusername = "hentdata"; 
+    $lorempassword = "123QWEasdZXC&_%"; 
     $loremdbname = "projectdb";
 
     // Create connection
@@ -70,6 +59,7 @@ function checkProject($ID){
         $kortbeskrivelse = $row["lorembeskrivkort"];
         $imgsrc = "../images/thumb/lorem_thumb.png";
     } 
+    
         return array($titel, $kortbeskrivelse, $imgsrc);
 }
 

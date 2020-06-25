@@ -76,5 +76,8 @@ function activeNavItem() {
         if (document.URL.includes("send=true")) {
         alert("Tak for din mail :)");
     }
+        if (document.URL.includes("send=false")) {
+        alert("Hov der gik noget galt");
+    }
     }, 100);
 }

@@ -23,7 +23,7 @@
     include 'bin/getdata.php';
     
 
-    $ID =$_GET['value'];    
+    $ID = filter_var($_GET['value'], FILTER_SANITIZE_NUMBER_INT);    
     
    
          list($titel, $beskrivelse, $imgsrc, $dato, $github) = checkProjectExtend($ID);

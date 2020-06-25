@@ -1,32 +1,43 @@
-<!DOCTYPE html>
+<?php
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="../css/Style.css" rel="stylesheet" type="text/css"/>
-        <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        
-        <title></title>
-    </head>
- <body onload="getheader();">
-     
-    <div id="target" class="navbar-dark upperheader bg-darkgray">
-        <a class="navbar-brand" href="index.php">  Mit portfolio  </a>
-    </div>
+function logincheck(){
+    $servername = "localhost"; 
+    global $username;
+    $username = $_POST['brugernavn']; 
+    global $password;
+    $password = $_POST['password']; 
+    $dbname = "projectdb";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+    }
+    else{
+    header("Location: addprojectform.php");
+    }
+}
 
-    <header id="header">
-    </header>
+function addproject(){
+    $servername = "localhost"; 
+    global $username;
+    global $password; 
+    $dbname = "projectdb";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+    }
     
+    $sql = "INSERT INTO project (Navn, Beskrivelse, Beskrivelsekort, Dato, Gitlink, ProjectImg)
+    VALUES ('John', 'Doe', 'john@example.com')";
 
-     
-    <div id="footer" class="footer bg-dark">
-    </div>
-     
-<!--        All Java Script files  -->
-    <script src="../js/getheader().js" type="text/javascript"></script>
-    <script src="../js/getfooter.js" type="text/javascript"></script>
+    if ($conn->query($sql) === TRUE) {
+    header("Location: login.php");
+    }
+
+    $conn->close();
     
-</body>
-</html>
+}
+
