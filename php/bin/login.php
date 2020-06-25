@@ -7,7 +7,7 @@
         <link href="../../css/Style.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         
-        <title>Tilføj projekt</title>
+        <title>Log ind</title>
     </head>
  <body onload="getheader();">
      
@@ -18,9 +18,14 @@
     <div class="row row-margin">
         <div class="col-sm-8">
             
-            <?php include 'addproject.php';
-             if(isset($_POST['login'])) { 
-            logincheck();} 
+            <?php
+            session_start();
+            include 'addproject.php';
+            if(isset($_POST['login'])) { 
+                if (logincheck()){
+                    $_SESSION['loggedin'] = true;             
+                }
+            }
             ?>
             
             <form method="post">

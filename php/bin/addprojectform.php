@@ -19,8 +19,19 @@
         <div class="col-sm-8">
             
             <?php include 'addproject.php';
-            if(isset($_POST['add'])) { 
-                addproject();} 
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                if(isset($_POST['add'])) { 
+                    addproject();
+                }
+            } 
+            else {
+                ?>
+            
+                <script type="text/javascript">
+                    logincheck();
+                </script>
+<?php
+            }
             ?>
             
             <form method="post" action="">

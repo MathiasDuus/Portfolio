@@ -1,6 +1,10 @@
 <?php
 
 function logincheck(){
+    if (!isset($_POST['brugernavn'])&&!isset($_POST['password']))
+    {
+        header("Location: login.php");
+    }
     $servername = "localhost"; 
     global $username;
     $username = $_POST['brugernavn']; 
@@ -14,7 +18,7 @@ function logincheck(){
        die("Connection failed: " . $conn->connect_error);
     }
     else{
-    header("Location: addprojectform.php");
+    return true;
     }
 }
 
@@ -29,15 +33,22 @@ function addproject(){
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
     }
+    $navn = $_POST['navn'];
+    $beskrivelse = $_POST['beskrivelse'];
+    $kortbeskrivelse = $_POST['kortbeskrivelse'];
+    $dato = date("Y-m-d", $_POST['dato']);
+    $gitlink = $_POST['gitlink'];
+    $image = $_POST['image'];
+    
+    
     
     $sql = "INSERT INTO project (Navn, Beskrivelse, Beskrivelsekort, Dato, Gitlink, ProjectImg)
-    VALUES ('John', 'Doe', 'john@example.com')";
+    VALUES ($navn, $beskrivelse, $kortbeskrivelse, $dato, $gitlink, $image)";
 
     if ($conn->query($sql) === TRUE) {
     header("Location: login.php");
     }
 
     $conn->close();
-    
 }
 

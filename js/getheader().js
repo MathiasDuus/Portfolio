@@ -13,6 +13,7 @@ function getheader() {
     xmlhttp.send();
     CreateSocial();
     getfooter();
+    urlCheck()
 }
 
 
@@ -72,12 +73,24 @@ function activeNavItem() {
     }
     else if (document.URL.includes("kontakt")) {
         document.getElementById("kontakt").className += " active";
-    }
-        if (document.URL.includes("send=true")) {
+    }   
+    }, 100);
+}
+
+function urlCheck(){
+    if (document.URL.includes("send=true")) {
         alert("Tak for din mail :)");
     }
-        if (document.URL.includes("send=false")) {
+    else if (document.URL.includes("send=false")) {
         alert("Hov der gik noget galt");
     }
-    }, 100);
+}
+
+function logincheck(){
+    
+var r=confirm("Husk att logge ind!");
+      if (r==true)
+        {
+        window.location="login.php";}
+    
 }
