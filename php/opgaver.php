@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html
 
 <html>
     <head>
@@ -21,10 +20,9 @@
          
           <?php  
           
-    include 'bin/numRow.php';
+    include 'bin/getdata.php';
     $numRow=numRow();
     
-    include 'bin/checkProject.php';
     $ID = 1;    
     
     for($ID;$ID<=$numRow;$ID++){
@@ -53,9 +51,7 @@
             </div>
          
 <!--        All Java Script files  -->
-        <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="../js/getheader().js" type="text/javascript"></script>
-        <script src="../js/imgerror.js" type="text/javascript"></script>
         <script src="../js/getfooter.js" type="text/javascript"></script>
     </body>
 </html>

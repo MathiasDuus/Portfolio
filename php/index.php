@@ -19,7 +19,7 @@
         <div id="front" class="row">
     <?php    
     
-    include 'bin/checkProject.php';
+    include 'bin/getdata.php';
     $ID = 1;    
     
     for($ID;$ID<4;$ID++){
@@ -48,10 +48,7 @@
             </div>
         
 <!--        All Java Script files  -->
-        <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="../js/getheader().js" type="text/javascript"></script>
-        <script src="../js/imgerror.js" type="text/javascript"></script>
         <script src="../js/getfooter.js" type="text/javascript"></script>
-        <script src="../js/activeNav.js" type="text/javascript"></script>
   </body>
 </html>

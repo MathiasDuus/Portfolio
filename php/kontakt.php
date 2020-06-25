@@ -11,6 +11,7 @@
         <title>Kontakt </title>
     </head>
  <body onload="getheader();">
+     
     <div id="target" class="navbar-dark upperheader bg-darkgray">
         <a class="navbar-brand" href="index.php">  Mit portfolio  </a>
     </div>
@@ -43,16 +44,13 @@
         </div>
     </div>
 </div>     
-
-     
      
     <div id="footer" class="footer bg-dark">
     </div>
      
 <!--        All Java Script files  -->
-    <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="../js/getheader().js" type="text/javascript"></script>
-    <script src="../js/imgerror.js" type="text/javascript"></script>
     <script src="../js/getfooter.js" type="text/javascript"></script>
+    
 </body>
 </html>

@@ -20,7 +20,7 @@
          
           <?php  
     
-    include 'bin/checkProjectExtend.php';
+    include 'bin/getdata.php';
     
 
     $ID =$_GET['value'];    
@@ -50,9 +50,7 @@
             </div>
         
 <!--        All Java Script files  -->
-        <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="../js/getheader().js" type="text/javascript"></script>
-        <script src="../js/imgerror.js" type="text/javascript"></script>
         <script src="../js/getfooter.js" type="text/javascript"></script>
     </body>
 </html>
