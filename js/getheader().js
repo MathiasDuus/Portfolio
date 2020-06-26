@@ -81,8 +81,14 @@ function urlCheck(){
 }
 
 function logincheck(){
-    
-var r=confirm("Husk att logge ind!");
+var r=confirm("Husk at logge ind!");
+      if (r==true || r==false)
+        {
+        window.location="login.php";}
+}
+
+function loginerror(){
+var r=confirm("Forkert login");
       if (r==true)
         {
         window.location="login.php";}

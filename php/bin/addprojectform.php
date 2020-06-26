@@ -7,6 +7,8 @@
         <link href="../../css/Style.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         
+    <script src="../../js/getheader().js" type="text/javascript"></script>
+        
         <title>Tilføj projekt</title>
     </head>
  <body onload="getheader();">
@@ -18,20 +20,32 @@
     <div class="row row-margin">
         <div class="col-sm-8">
             
-            <?php include 'addproject.php';
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            <?php  include 'addproject.php';
+            if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+             if ("{$_SESSION['loggedin']}" == 1){
                 if(isset($_POST['add'])) { 
-                    addproject();
+                     addproject();
                 }
             } 
             else {
-                ?>
-            
-                <script type="text/javascript">
+                echo '<script type="text/javascript">
                     logincheck();
-                </script>
-<?php
+                </script>';
             }
+    $time = $_SERVER['REQUEST_TIME'];
+
+    // specified in seconds
+    $timeout_duration = 300;
+
+    if (isset($_SESSION['LAST_ACTIVITY']) && 
+       ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+        session_unset();
+        session_destroy();
+        echo '<script type="text/javascript">
+            logincheck();
+        </script>';
+    }
+            
             ?>
             
             <form method="post" action="">
@@ -72,7 +86,6 @@
 </div>    
      
 <!--        All Java Script files  -->
-    <script src="../../js/getheader().js" type="text/javascript"></script>
     <script src="../../js/getfooter.js" type="text/javascript"></script>
     
 </body>

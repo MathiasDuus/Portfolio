@@ -17,15 +17,11 @@
     <div class="container">
     <div class="row row-margin">
         <div class="col-sm-8">
-            
-            <?php
-            session_start();
-            include 'addproject.php';
-            if(isset($_POST['login'])) { 
-                if (logincheck()){
-                    $_SESSION['loggedin'] = true;             
-                }
-            }
+                      
+            <?php include 'addproject.php';
+             if(isset($_POST['login'])) { 
+                if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+            logincheck();} 
             ?>
             
             <form method="post">

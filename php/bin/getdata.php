@@ -1,7 +1,7 @@
 <?php
 
 function conn(){
- $servername = "localhost"; 
+    $servername = "localhost"; 
     $username = "hentdata"; 
     $password = "123QWEasdZXC&_%"; 
     $dbname = "projectdb";
