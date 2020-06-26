@@ -79,12 +79,13 @@ function addproject(){
     $navn = $_POST['navn'];
     $beskrivelse = $_POST['beskrivelse'];
     $kortbeskrivelse = $_POST['kortbeskrivelse'];
-    $dato = date("Y-m-d", $_POST['dato']);
+    $date = DateTime::createFromFormat('d-m-Y', $_POST["dato"]);
+    $date = $date->format('Y-m-d');
     $gitlink = $_POST['gitlink'];
     $image = $_POST['image'];
         
     
-    $sql = "INSERT INTO project (Navn, Beskrivelse, Beskrivelsekort, Dato, Gitlink, ProjectImg) VALUES ($navn, $beskrivelse, $kortbeskrivelse, $dato, $gitlink, $image)";
+    $sql = 'INSERT INTO project (Navn, Beskrivelse, Beskrivelsekort, Dato, Gitlink, ProjectImg) VALUES ("'.$navn.'", "'.$beskrivelse.'", "'.$kortbeskrivelse.'", "'.$date.'", "'.$gitlink.'", "'.$image.'")';
 
     if ($conn->query($sql) === TRUE) {
         $conn->close();
