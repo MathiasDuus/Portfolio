@@ -16,9 +16,9 @@ echo '<script type="text/javascript">
 
     function login($brugernavn, $kode){
     $servername = "localhost"; 
-    $username = "hentdata"; 
-    $password = "123QWEasdZXC&_%"; 
-    $dbname = "projectdb";
+    $username = "pman01.skp-dp.sd"; 
+    $password = "2pp3q2p5"; 
+    $dbname = "pman01_skp_dp_sde_dk";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
@@ -40,15 +40,12 @@ function logincheck(){
         header("Location: login.php");
     }
     
-    $_SESSION['username'] = $_POST['brugernavn'];
-    $_SESSION['password'] = $_POST['password'];
-    
-    if (login($_SESSION['username'], $_SESSION['password'])){
+    if (login($_POST['brugernavn'], $_POST['password'])){
         
         $servername = "localhost"; 
-        $username = $_SESSION['username']; 
-        $password = $_SESSION['password'];
-        $dbname = "projectdb";
+        $username = "pman01.skp-dp.sd";
+        $password = "2pp3q2p5"; 
+        $dbname = "pman01_skp_dp_sde_dk";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -70,9 +67,9 @@ function logincheck(){
     
 function addproject(){
     $servername = "localhost"; 
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-    $dbname = "projectdb";
+    $username = "pman01.skp-dp.sd";
+    $password = "2pp3q2p5"; 
+    $dbname = "pman01_skp_dp_sde_dk";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection

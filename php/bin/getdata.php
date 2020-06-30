@@ -2,9 +2,9 @@
 
 function conn(){
     $servername = "localhost"; 
-    $username = "hentdata"; 
-    $password = "123QWEasdZXC&_%"; 
-    $dbname = "projectdb";
+    $username = "pman01.skp-dp.sd"; 
+    $password = "2pp3q2p5"; 
+    $dbname = "pman01_skp_dp_sde_dk";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
@@ -16,9 +16,9 @@ function conn(){
 
 function loremconn(){
     $loremservername = "localhost"; 
-    $loremusername = "hentdata"; 
-    $lorempassword = "123QWEasdZXC&_%"; 
-    $loremdbname = "projectdb";
+    $loremusername = "pman01.skp-dp.sd"; 
+    $lorempassword = "2pp3q2p5"; 
+    $loremdbname = "pman01_skp_dp_sde_dk";
 
     // Create connection
     $loremconn = new mysqli($loremservername, $loremusername, $lorempassword, $loremdbname);
