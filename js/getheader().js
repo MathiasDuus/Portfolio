@@ -70,7 +70,7 @@ function activeNavItem() {
     
     else if (document.URL.includes("kontakt")) {
         document.getElementById("kontakt").className += " active";}   
-    }, 100);
+    }, 150);
 }
 
 function urlCheck(){

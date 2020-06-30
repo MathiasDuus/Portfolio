@@ -17,7 +17,8 @@
         
         <header id="header">
         </header>
-         
+<div class="container">
+    <div class="row">       
           <?php  
           
     include 'bin/getdata.php';
@@ -32,7 +33,7 @@
         
   <div class="col-md-3 card-margin">
    <div class="card">
-        <img class="card-img-top card-imgage" src="<?php echo $imgsrc; ?>" onerror="<?php echo $imgsrc; ?>">
+        <img class="card-img-top card-imgage" src="<?php echo $imgsrc; ?>" onerror="<?php echo $onerrorimgsrc; ?>">
       <div class="card-body">
         <h5 class="card-title"><?php echo $titel; ?></h5>
         <p class="card-text"><?php echo $kortbeskrivelse ?></p>
@@ -45,8 +46,9 @@
         
         <?php
     }
-     ?>                
-
+     ?>    
+    </div>
+</div>
             <div id="footer" class="footer bg-dark">
             </div>
          

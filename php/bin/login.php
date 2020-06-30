@@ -18,8 +18,9 @@
     <div class="row row-margin">
         <div class="col-sm-8">
                       
-            <?php include 'addproject.php';
-             if(isset($_POST['login'])) { 
+            <?php 
+             if(isset($_POST['login'])) {
+                 include 'addproject.php';
                 if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
             logincheck();} 
             ?>

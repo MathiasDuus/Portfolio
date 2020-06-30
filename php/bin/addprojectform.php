@@ -20,32 +20,34 @@
     <div class="row row-margin">
         <div class="col-sm-8">
             
-            <?php  include 'addproject.php';
+            <?php  
             if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
              if ("{$_SESSION['loggedin']}" == 1){
                 if(isset($_POST['add'])) { 
-                     addproject();
+                    include 'addproject.php';
+                    addproject();
                 }
             } 
             else {
                 echo '<script type="text/javascript">
-                    logincheck();
-                </script>';
+                        logincheck();
+                    </script>';
             }
-    $time = $_SERVER['REQUEST_TIME'];
-
-    // specified in seconds
-    $timeout_duration = 300;
-
-    if (isset($_SESSION['LAST_ACTIVITY']) && 
-       ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+            
+if (isset($_SESSION["LAST_ACTIVITY"])) {
+    if (time() - $_SESSION["LAST_ACTIVITY"] > 10) { //int is seconds
         session_unset();
         session_destroy();
-        echo '<script type="text/javascript">
+    } 
+    else if (time() - $_SESSION["LAST_ACTIVITY"] > 2) {
+        $_SESSION["LAST_ACTIVITY"] = time();
+    }
+}
+else{     
+    echo '<script type="text/javascript">
             logincheck();
         </script>';
-    }
-            
+    }    
             ?>
             
             <form method="post" action="">

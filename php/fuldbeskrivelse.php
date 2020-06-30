@@ -32,7 +32,7 @@
         
 <div class="col-sm-6 card-margin-big">
     <div class="card">
-        <img class="card-img-top card-img-big" src="<?php echo $imgsrc; ?>" alt="<?php echo $imgsrc; ?>">
+        <img class="card-img-top card-img-big" src="<?php echo $imgsrc; ?>" alt="<?php echo $onerrorimgsrc; ?>">
         
         <div class="card-body">
             <h5 class="card-title"><?php echo $titel; ?></h5>

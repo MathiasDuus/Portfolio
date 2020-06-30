@@ -7,9 +7,12 @@ if (session_status() === PHP_SESSION_ACTIVE) {
                 </script>';
     }
 }
-
 else 
-{session_start();}
+{session_start();
+echo '<script type="text/javascript">
+        logincheck();
+     </script>';
+}
 
     function login($brugernavn, $kode){
     $servername = "localhost"; 

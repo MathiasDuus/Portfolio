@@ -49,6 +49,7 @@ function checkProject($ID){
         $titel = $row["Navn"];
         $kortbeskrivelse = $row["Beskrivelsekort"];
         $imgsrc = $row["ProjectImg"];
+        $onerrorimgsrc = "../images/thumb/no-image-found_thumb.png";
         }
     else {
         $sql = 'SELECT * FROM lorem'; 
@@ -58,9 +59,10 @@ function checkProject($ID){
         $titel = $row["loremtitel"];
         $kortbeskrivelse = $row["lorembeskrivkort"];
         $imgsrc = "../images/thumb/lorem_thumb.png";
+        $onerrorimgsrc = "../images/thumb/no-image-found_thumb.png";
     } 
     
-        return array($titel, $kortbeskrivelse, $imgsrc);
+        return array($titel, $kortbeskrivelse, $imgsrc, $onerrorimgsrc);
 }
 
 function checkProjectExtend($ID){
