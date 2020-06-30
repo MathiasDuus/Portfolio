@@ -1,12 +1,10 @@
 <?php
 
 function conn(){
-    $servername = "localhost"; 
-    $username = "pman01.skp-dp.sd"; 
-    $password = "2pp3q2p5"; 
-    $dbname = "pman01_skp_dp_sde_dk";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli("localhost", "pman01.skp-dp.sd","2pp3q2p5",
+"pman01_skp_dp_sde_dk");
+    // makes sure æøå works
+    $conn->set_charset("utf8");
     // Check connection
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
@@ -15,15 +13,12 @@ function conn(){
 }
 
 function loremconn(){
-    $loremservername = "localhost"; 
-    $loremusername = "pman01.skp-dp.sd"; 
-    $lorempassword = "2pp3q2p5"; 
-    $loremdbname = "pman01_skp_dp_sde_dk";
-
-    // Create connection
-    $loremconn = new mysqli($loremservername, $loremusername, $lorempassword, $loremdbname);
-    // Check connection
-    if ($loremconn->connect_error) {
+    $loremconn = new mysqli("localhost", "pman01.skp-dp.sd","2pp3q2p5",
+"pman01_skp_dp_sde_dk");
+    // makes sure æøå works
+    $loremconn->set_charset("utf8");
+    // Check connection 
+    if ($loremconn->connect_error) { 
        die("Connection failed: " . $loremconn->connect_error);
     }
     return $loremconn;
@@ -31,7 +26,7 @@ function loremconn(){
 
 function numRow(){
     $conn = conn();
-    $sql = 'SELECT * FROM Project'; 
+    $sql = 'SELECT * FROM project'; 
     $result = $conn->query($sql);
     $rows = $result->num_rows;
 
@@ -41,7 +36,7 @@ function numRow(){
 function checkProject($ID){
     $conn = conn();
     $loremconn = loremconn();
-    $sql = 'SELECT * FROM Project  WHERE ProjectID ="'.$ID.'"'; 
+    $sql = 'SELECT * FROM project  WHERE ProjectID ="'.$ID.'"'; 
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -61,7 +56,6 @@ function checkProject($ID){
         $imgsrc = "../images/thumb/lorem_thumb.png";
         $onerrorimgsrc = "../images/thumb/no-image-found_thumb.png";
     } 
-    
         return array($titel, $kortbeskrivelse, $imgsrc, $onerrorimgsrc);
 }
 
@@ -70,7 +64,7 @@ function checkProjectExtend($ID){
     $loremconn = loremconn();
     
     
-    $sql = 'SELECT * FROM Project  WHERE ProjectID ="'.$ID.'"'; 
+    $sql = 'SELECT * FROM project  WHERE ProjectID ="'.$ID.'"'; 
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {

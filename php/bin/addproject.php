@@ -15,18 +15,16 @@ echo '<script type="text/javascript">
 }
 
     function login($brugernavn, $kode){
-    $servername = "localhost"; 
-    $username = "pman01.skp-dp.sd"; 
-    $password = "2pp3q2p5"; 
-    $dbname = "pman01_skp_dp_sde_dk";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+        // uses the connection from getdata
+        include 'getdata.php';
+        $conn = conn();
+        
     // Check connection
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
     }
     $sql = 'SELECT * FROM login  WHERE Brugernavn ="'.$brugernavn.'" AND Password ="'.$kode.'"'; 
-    $result = $conn->query($sql);
+    $result = $conn->query($sql); 
 
     if ($result->num_rows != 1) {
         return false;
@@ -41,14 +39,10 @@ function logincheck(){
     }
     
     if (login($_POST['brugernavn'], $_POST['password'])){
-        
-        $servername = "localhost"; 
-        $username = "pman01.skp-dp.sd";
-        $password = "2pp3q2p5"; 
-        $dbname = "pman01_skp_dp_sde_dk";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+  
+        // uses the connection from getdata
+        include 'getdata.php';
+        $conn = conn();
         // Check connection
         if ($conn->connect_error) {
            $conn->close();
@@ -66,12 +60,11 @@ function logincheck(){
 }
     
 function addproject(){
-    $servername = "localhost"; 
-    $username = "pman01.skp-dp.sd";
-    $password = "2pp3q2p5"; 
-    $dbname = "pman01_skp_dp_sde_dk";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    // uses the connection from getdata
+    include 'getdata.php';
+    $conn = conn();
+
     // Check connection
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
@@ -84,7 +77,6 @@ function addproject(){
     $gitlink = $_POST['gitlink'];
     $image = $_POST['image'];
         
-    
     $sql = 'INSERT INTO project (Navn, Beskrivelse, Beskrivelsekort, Dato, Gitlink, ProjectImg) VALUES ("'.$navn.'", "'.$beskrivelse.'", "'.$kortbeskrivelse.'", "'.$date.'", "'.$gitlink.'", "'.$image.'")';
 
     if ($conn->query($sql) === TRUE) {
