@@ -27,7 +27,7 @@
     $ID = 1;    
     
     for($ID;$ID<=$numRow;$ID++){
-         list($titel, $kortbeskrivelse, $imgsrc) = checkProject($ID);
+         list($titel, $kortbeskrivelse, $imgsrc, $onerrorimgsrc) = checkProject($ID);
         
          ?>
         

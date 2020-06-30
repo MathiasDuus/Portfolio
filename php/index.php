@@ -23,7 +23,7 @@
     $ID = 1;    
     
     for($ID;$ID<4;$ID++){
-         list($titel, $kortbeskrivelse, $imgsrc) = checkProject($ID);
+         list($titel, $kortbeskrivelse, $imgsrc, $onerrorimgsrc) = checkProject($ID);
         
          ?>
         
