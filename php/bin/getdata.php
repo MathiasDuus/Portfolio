@@ -74,6 +74,7 @@ function checkProjectExtend($ID){
         $imgsrc = $row["ProjectImg"];
         $dato = date("d-m-Y", strtotime($row["Dato"]));
         $github = $row["Gitlink"];
+        $onerrorimgsrc = "../images/thumb/no-image-found_thumb.png";
         }
     else {
         $sql = 'SELECT * FROM lorem'; 
@@ -85,6 +86,7 @@ function checkProjectExtend($ID){
         $imgsrc = "../images/thumb/lorem_thumb.png";
         $dato = "DD-MM-YYYY";
         $github = $row["loremgitlink"];
+        $onerrorimgsrc = "../images/thumb/no-image-found_thumb.png";
     } 
-        return array($titel, $beskrivelse, $imgsrc, $dato, $github);
+        return array($titel, $beskrivelse, $imgsrc, $onerrorimgsrc, $dato, $github);
 }
